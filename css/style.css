@@ -9719,3 +9719,205 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+/* =========================================
+   CUSTOM FIXES - SABBIR PORTFOLIO
+   Paste this at the VERY BOTTOM of style.css
+========================================= */
+
+/* ================================
+   NAVBAR SIGNATURE LOGO
+================================= */
+.navbar-brand {
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img.signature-logo {
+  height: 48px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ================================
+   PROFESSIONAL HEADING FONT STYLE
+================================= */
+.big-4 {
+  font-size: 42px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  transform: none !important;
+}
+
+/* Optional cleaner headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ================================
+   ABOUT IMAGE CLEANUP
+================================= */
+.about-mf .about-img img,
+.about-img img,
+.img-about img,
+#about-section img.img-fluid {
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ================================
+   GENERAL TEXT SAFETY
+================================= */
+.about-info p,
+.resume-wrap p,
+.resume-wrap li,
+.skill-mf span,
+.skill-mf p {
+  word-break: break-word;
+}
+
+
+
+
+
+/* =========================================
+   SABBIR MOBILE FIX PATCH (SAFE VERSION)
+   Paste at the VERY BOTTOM of style.css
+========================================= */
+
+
+  /* FIX TYPING ANIMATION */
+  #typing-animation {
+    font-size: 20px !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    display: inline-block !important;
+    min-height: 32px !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+
+  /* Hero image area */
+
+
+  /* FORCE smaller about photo */
+  .about-mf .about-img img,
+  .about-img img,
+  .img-about img,
+  #about-section img,
+  #about-section .img-fluid {
+    width: 110px !important;
+    height: 110px !important;
+    max-width: 110px !important;
+    min-width: 110px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    display: block !important;
+    margin: 0 auto 20px auto !important;
+  }
+
+  /* About text spacing */
+  .about-info {
+    margin-top: 10px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+/* ================================
+   CLEAN MOBILE SPACING FIX
+================================= */
+@media (max-width: 768px) {
+
+  /* Add left & right space for whole site */
+  body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Main containers */
+  .container,
+  .container-fluid {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* Sections spacing */
+  section,
+  .ftco-section {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  /* Text blocks safety */
+  p, li, span, a, h1, h2, h3, h4 {
+    word-break: break-word;
+  }
+
+}
+
+
+
+
+/* ================================
+   CONTACT SECTION GRID FIX
+================================= */
+
+/* Mobile: 2 items per row */
+@media (max-width: 768px) {
+  #contact-section .row.d-flex.contact-info {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+  }
+
+  #contact-section .row.d-flex.contact-info .col-md-6,
+  #contact-section .row.d-flex.contact-info .col-lg-3 {
+    width: 48% !important;
+    max-width: 48% !important;
+    flex: 0 0 48% !important;
+    margin-bottom: 20px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+
+  /* Make each box smaller */
+  #contact-section .box {
+    padding: 15px 10px !important;
+    min-height: auto !important;
+  }
+
+  /* Smaller icons */
+  #contact-section .icon {
+    width: 55px !important;
+    height: 55px !important;
+    margin: 0 auto 12px auto !important;
+  }
+
+  #contact-section .icon span {
+    font-size: 18px !important;
+  }
+
+  /* Smaller heading */
+  #contact-section h3 {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Smaller text */
+  #contact-section p,
+  #contact-section a {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    word-break: break-word !important;
+  }
+}
+
+
+
