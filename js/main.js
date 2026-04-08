@@ -234,3 +234,42 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", navbarEffect);
   navbarEffect();
 });
+
+
+
+/* =========================
+   PACKAGE TABS
+========================= */
+document.querySelectorAll(".pricing-tab").forEach(tab => {
+  tab.addEventListener("click", function () {
+    const target = this.getAttribute("data-target");
+
+    document.querySelectorAll(".pricing-tab").forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+    document.querySelectorAll(".pricing-group").forEach(group => {
+      group.classList.remove("active");
+    });
+
+    this.classList.add("active");
+    document.getElementById(target).classList.add("active");
+  });
+});
+
+/* =========================
+   PACKAGE SEE MORE / LESS
+========================= */
+document.querySelectorAll(".toggle-btn").forEach(button => {
+  button.addEventListener("click", function () {
+    const card = this.closest(".pricing-card");
+
+    card.classList.toggle("open");
+
+    if (card.classList.contains("open")) {
+      this.textContent = "Show Less";
+    } else {
+      this.textContent = "See More";
+    }
+  });
+});
