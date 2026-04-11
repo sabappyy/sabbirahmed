@@ -273,3 +273,102 @@ document.querySelectorAll(".toggle-btn").forEach(button => {
     }
   });
 });
+
+
+const tabs = document.querySelectorAll(".tab");
+const cards = document.querySelectorAll(".project-card");
+const seeAllCard = document.getElementById("seeAllCard");
+
+let showAll = false;
+
+function filterProjects(category) {
+  let visibleCount = 0;
+
+  cards.forEach((card, index) => {
+    if (card.classList.contains("see-all-card")) return;
+
+    const match = category === "all" || card.dataset.category === category;
+
+    if (match) {
+      if (!showAll && visibleCount >= 5) {
+        card.classList.add("hidden");
+
+        setTimeout(() => {
+          card.style.display = "none";
+        }, 200);
+      } else {
+        card.style.display = "block";
+
+        setTimeout(() => {
+          card.classList.remove("hidden");
+        }, index * 60);
+
+        visibleCount++;
+      }
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  if (category === "all" && !showAll) {
+    seeAllCard.style.display = "flex";
+    seeAllCard.classList.remove("fade-out");
+  } else {
+    seeAllCard.style.display = "none";
+  }
+}
+
+// TAB CLICK
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    tabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+
+    showAll = false;
+
+    const category = tab.dataset.filter;
+    filterProjects(category);
+  });
+});
+
+// SEE ALL CLICK
+seeAllCard.addEventListener("click", () => {
+  showAll = true;
+
+  seeAllCard.classList.add("fade-out");
+
+  setTimeout(() => {
+    seeAllCard.style.display = "none";
+    filterProjects("all");
+  }, 300);
+});
+
+// INIT
+filterProjects("all");
+
+
+
+
+// SEE ALL CLICK
+seeAllCard.addEventListener("click", () => {
+  showAll = true;
+
+  // 🔥 Smooth fade out
+  seeAllCard.classList.add("fade-out");
+
+  setTimeout(() => {
+    seeAllCard.style.display = "none";
+
+    // Show all projects with animation
+    cards.forEach((card, index) => {
+      if (!card.classList.contains("see-all-card")) {
+        card.style.display = "block";
+
+        // Stagger animation
+        setTimeout(() => {
+          card.classList.remove("hidden");
+        }, index * 60);
+      }
+    });
+  }, 300);
+});
